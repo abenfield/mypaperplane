@@ -1,0 +1,9 @@
+<center><%= link_to image_tag('mypaperplane.png'), root_path %>
+<h1>Showing selected article</h1>
+
+
+<p> Title: <%= @article.title %></p>
+
+<p>Description <%=@article.description %></p>
+<h1><%= link_to 'Back to Article Listing', articles_path %></h1>
+</center>
