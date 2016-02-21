@@ -1,12 +1,20 @@
-<center>
-    <div class="jumbotron">
-  <h1>Welcome to MyPaperPlane!</h1>
-  <p>(-: You can do stuff</p>
-  <p><a class="btn btn-primary btn-lg" role="button" <%= link_to "New Article", new_article_path %></a></p>
-         
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="title-container">
+            <div class="headline">
+                 <%= link_to image_tag('mypaperplane.png'), root_path %>
+
+            </div>
+            <div class="description">
+              <h3>Create and Share Meaningful Letters with People You Love.</h3> 
+       <button class="btn btn-xlarge btn-primary">Start Today</button>
+            </div>
+        </div>
+        <div class="filter"></div>
+     <%= video_tag "clouds.mp4", :size => "320x240", :controls => false, :autoplay => true, :loop => true %>
+        <div class="poster hidden">
+            <img src="http://www.videojs.com/img/poster.jpg" alt="">
+        </div>
+    </div>
 </div>
-    
-    
-
-
-</center>
