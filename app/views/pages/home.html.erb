@@ -1,14 +1,20 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+
+
 <div class="homepage-hero-module">
     <div class="video-container">
         <div class="title-container">
             <div class="headline">
+                
                  <%= link_to image_tag('mypaperplane.png'), root_path %>
 
             </div>
             <div class="description">
               <h3>Create and Share Meaningful Letters with People You Love.</h3> 
-       <button class="btn btn-xlarge btn-primary">  <%= link_to "Start Today!", new_article_path %></button>
+    
+       <%= button_to('Join Now!',new_article_path, method: :get, :class => 'btn btn-xlarge btn-primary')  %>
             </div>
         </div>
         <div class="filter"></div>
