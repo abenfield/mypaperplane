@@ -1,4 +1,9 @@
 $navbar-default-bg: white;
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -17,4 +22,40 @@ $navbar-default-bg: white;
             margin-top:25px;
     }
 
+#footer {
 
+    padding:50px;
+    background-color:#484848;
+    color:white;
+}
+
+.article-actions {
+border-top: 1px solid #eaeaea;
+padding-top: 5px;
+}
+.description {
+margin-top: 0;
+}
+#paper {
+  
+    background-image: url(paper.jpg);
+    width:850px;
+    height:1100px;
+}
+
+
+.latestblock {
+
+
+  position: absolute;
+}
+
+.article-title {
+font-weight: bold;
+font-size: 1.5em;
+}
+.article-body {
+border-top: 1px solid #eaeaea;
+padding-top: 15px;
+padding-bottom: 15px;
+}

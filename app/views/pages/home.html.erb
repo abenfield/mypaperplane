@@ -1,26 +1,86 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
 
-
+ 
 
 <div class="homepage-hero-module">
+    
     <div class="video-container">
         <div class="title-container">
             <div class="headline">
-                
-                 <%= link_to image_tag('mypaperplane.png'), root_path %>
+                     <%= image_tag('mypaperplane.png') %> 
+           
 
             </div>
+           
             <div class="description">
               <h3>Create and Share Meaningful Letters with People You Love.</h3> 
     
        <%= button_to('Join Now!',new_article_path, method: :get, :class => 'btn btn-xlarge btn-primary')  %>
             </div>
         </div>
-        <div class="filter"></div>
-     <%= video_tag "clouds.mp4", :size => "320x240", :controls => false, :autoplay => true, :loop => true %>
+        
+        <div class="filter">   <div id='container'>
+              
+  <% @articles.each do |article| %>
+  <div class='latestblock'><%= 
+  image_tag("#{rand(2)}.gif", size:"#{rand(30..500)}")%></div>
+<% end %>
+  
+</div></div>
+     <%= video_tag "clouds.mp4", :size => "1920x1080", :controls => false, :autoplay => true, :loop => true %>
         <div class="poster hidden">
             <img src="http://www.videojs.com/img/poster.jpg" alt="">
         </div>
+        
     </div>
+
+   
 </div>
+
+<script>
+
+
+
+    		function randomFromTo(from, to){
+			return Math.floor(Math.random() * (to - from + 1) + from);
+		}
+  
+		function moveRandom(obj) {
+			/* get container position and size
+			 * -- access method : cPos.top and cPos.left */
+			var cPos = $('#container').offset();
+			var cHeight = $('#container').height();
+			var cWidth = $('#container').width();
+			
+			// get box padding (assume all padding have same value)
+			var pad = parseInt($('#container').css('padding-top').replace('px', ''));
+			
+			// get movable box size
+			var bHeight = obj.height();
+			var bWidth = obj.width();
+			
+			// set maximum position
+			maxY = cPos.top + cHeight - bHeight - pad;
+			maxX = cPos.left + cWidth - bWidth - pad;
+			
+			// set minimum position
+			minY = cPos.top + pad;
+			minX = cPos.left + pad;
+			
+			// set new position			
+			newY = randomFromTo(minY, maxY);
+			newX = randomFromTo(minX, maxX);
+			
+			obj.animate({
+				top: newY,
+				left: newX
+				}, 5000, function() {
+          moveRandom(obj);
+			});
+		}
+$('.latestblock').each(function() {
+moveRandom($(this));
+});
+
+</script>
