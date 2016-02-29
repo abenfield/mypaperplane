@@ -1,8 +1,3 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
-
-
- 
-
 <div class="homepage-hero-module">
     
     <div class="video-container">
@@ -14,23 +9,24 @@
             </div>
            
             <div class="description">
-              <h3>Create and Share Meaningful Letters with People You Love.</h3> 
+              <h2 style = " -webkit-text-stroke-width: .7px;
+   -webkit-text-stroke-color: black;">Create and Share Meaningful Letters with People You Love.</h2> 
     
        <%= button_to('Join Now!',new_article_path, method: :get, :class => 'btn btn-xlarge btn-primary')  %>
             </div>
         </div>
         
-        <div class="filter">   <div id='container'>
+        <div class="filter">   
               
   <% @articles.each do |article| %>
   <div class='latestblock'><%= 
   image_tag("#{rand(2)}.gif", size:"#{rand(30..500)}")%></div>
 <% end %>
   
-</div></div>
+</div>
      <%= video_tag "clouds.mp4", :size => "1920x1080", :controls => false, :autoplay => true, :loop => true %>
         <div class="poster hidden">
-            <img src="http://www.videojs.com/img/poster.jpg" alt="">
+            <img src="#" alt="">
         </div>
         
     </div>
@@ -49,12 +45,12 @@
 		function moveRandom(obj) {
 			/* get container position and size
 			 * -- access method : cPos.top and cPos.left */
-			var cPos = $('#container').offset();
-			var cHeight = $('#container').height();
-			var cWidth = $('#container').width();
+			var cPos = $('.filter').offset();
+			var cHeight = $('.filter').height();
+			var cWidth = $('.filter').width();
 			
 			// get box padding (assume all padding have same value)
-			var pad = parseInt($('#container').css('padding-top').replace('px', ''));
+			var pad = parseInt($('.filter').css('padding-top').replace('px', ''));
 			
 			// get movable box size
 			var bHeight = obj.height();
